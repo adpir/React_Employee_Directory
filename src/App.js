@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import EmployeeRow from "./components/EmployeeTable";
-import EmployeeTable from "./components/EmployeeTable";
+import EmployeeHeader from "./components/EmployeeHeader/EmployeeHeader";
+import EmployeeTable from "./components/EmployeeTable/employeeTable";
 import employee from "./employee.json";
 
 class App extends Component {
@@ -8,31 +8,37 @@ class App extends Component {
   state = {
     employee
   };
-
+  // useEffect(() => {
+  //   setEmployees(employee_list);
+  // }, []);
   removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
+     //Filter this.state.friends for friends with an id not equal to the id being removed
+     const employee = this.state.employee.filter(employee => employee.id !== id);
+     // Set this.state.friends equal to the new friends array
+ this.setState({ employee });
+ };
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
-      <Wrapper>
-        <Title>Friends List</Title>
-        {this.state.employee.map(friend => (
+      <div> 
+        <table className ="table table-stripped table dark"> 
+        <EmployeeHeader employee ={employee[0]} />
+        <tbody> 
+        {this.state.employee.map(employee => (
           <EmployeeTable
-            removeFriend={this.removeFriend}
-            id={friend.id}
-            key={friend.id}
-            name={friend.name}
-            image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
+            employee={employee}
+            // id={friend.id}
+            // key={friend.id}
+            // name={friend.name}
+            // image={friend.image}
+            // occupation={friend.occupation}
+            // location={friend.location}
           />
         ))}
-      </Wrapper>
+        </tbody>
+        </table>
+     </div>
     );
   }
 }
