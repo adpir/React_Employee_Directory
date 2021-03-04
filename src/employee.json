@@ -2,7 +2,6 @@
     {
       "id": 1,
       "name": "Allie",
-      "image": "https://vignette.wikia.nocookie.net/spongebobgalaxy/images/0/07/SpongeBob_SquarePants.png/revision/latest?cb=20171228024014",
       "occupation": "Artist",
       "location": "A artist Under the Sea",
       "email": "allie@gmail.com"
@@ -10,7 +9,6 @@
     {
       "id": 2,
       "name": "Coqui",
-      "image": "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131",
       "occupation": "eating",
       "location": "Nature of the forest",
       "email": "Coqui@gmail.com"
@@ -18,7 +16,6 @@
     {
       "id": 3,
       "name": "Squidward",
-      "image": "https://vignette2.wikia.nocookie.net/fictionalcharacters/images/a/ac/Squidward.png/revision/latest?cb=20131121012626",
       "occupation": "Cashier",
       "location": "An Easter Island Head",
       "email": "squidward@gmail.com"
@@ -26,7 +23,6 @@
     {
       "id": 4,
       "name": "Bo",
-      "image": "https://s-media-cache-ak0.pinimg.com/originals/fe/32/49/fe32495d45283cd6860ae122f0aeaad9.png",
       "occupation": "BO BO",
       "location": "A Secret Laboratory",
       "email": "Bo@gmail.com"
@@ -34,11 +30,11 @@
     {
       "id": 5,
       "name": "Estrella",
-      "image": "https://vignette4.wikia.nocookie.net/vsbattles/images/3/39/Courage-0.png/revision/latest?cb=20160719055423",
       "occupation": "Luna",
       "location": "Stardust",
       "email": "startdust@gmail.com"
     }
+    
     
    
   ]
