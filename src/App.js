@@ -1,37 +1,22 @@
- import React from "react";
-import EmployeeData from "./components/EmployeeData/EmployeeData";
-import Header from "./components/Header/Header";
+ import Header from "./components/Header/Header";
  import Footer from "./components/Footer/Footer";
+ import Navbar from "./components/Navbar/Navbar";
+// import EmployeeTable from "./components/datatable/EmployeeData"
+import EmployeeDB from "./components/datatable/EmployeesDB";
 
-// function App() {
-//     return <EmployeeData />;
-//   }
-  
-//   export default App;
+ function App() {
+      return (
+         <div>
+        <Header/>
 
- class App extends React.Component {
-// //   // Setting this.state.friends to the friends json array
-  
-// //   // useEffect(() => {
-// //   //   setEmployees(employee_list);
-// //   // }, []);
-// // //   removeFriend = id => {
-// // //      //Filter this.state.friends for friends with an id not equal to the id being removed
-// // //      const employee = this.state.employee.filter(employee => employee.id !== id);
-// // //      // Set this.state.friends equal to the new friends array
-// // //  this.setState({ employee });
-// // //  };
-
-// //   // Map over this.state.friends and render a FriendCard component for each friend object
-    render() {
-     return (
-     <div> 
-
-      <Header/>
-     <EmployeeData/>
-     <Footer />
+         <EmployeeDB />
+        <Footer/>
+        
+        <Navbar/>
       </div>
-    );
+       )
     }
- }
- export default App;
+    export default App;
+
+
+  
