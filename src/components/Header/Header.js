@@ -1,7 +1,8 @@
 import React from "react";
 
 function Header(){
-    return(<header className="bg-info">
+    return(
+    <header className="bg-info">
        
     </header>)
 }

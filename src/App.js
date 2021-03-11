@@ -1,17 +1,17 @@
  import Header from "./components/Header/Header";
- import Footer from "./components/Footer/Footer";
+ import Picture from "./components/Picture/Picture";
  import Navbar from "./components/Navbar/Navbar";
-// import EmployeeTable from "./components/datatable/EmployeeData"
 import EmployeeDB from "./components/datatable/EmployeesDB";
 
  function App() {
       return (
          <div>
         <Header/>
-
-         <EmployeeDB />
-        <Footer/>
-        
+        <Picture />
+                 <EmployeeDB 
+           
+         />
+     
         <Navbar/>
       </div>
        )

@@ -47,13 +47,17 @@
                 sort:"asc",
                 width:125
             },
-        ],
-        rows: props.rows
-           
-  
+        ], 
+        rows: props.rows,
+       
+        
     }
-  
-    return <MDBDataTable striped bordered hover data={data} />
+   
+    return <MDBDataTable striped bordered hover data={data}
+   
+    
+    />
+    
   
   }
 
