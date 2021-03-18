@@ -2,30 +2,39 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 
+
 class EmployeesDB extends React.Component {
   state = {
     loading: true,
-    people: []
+    employees: []
   };
 
   async componentDidMount() {
     const url = ('https://api.randomuser.me/?results=50')
     const response = await fetch(url);
     const data = await response.json();
-    this.setState({ people: data.results, loading: false });
+    this.setState({ employees: data.results, loading: false });
   }
-
+  //  const { data } = this.props;
+  // const employeesList = data.map(name => {
+  //   return (
+  //     <li key={name.id} className={name.first}>{name.last}</li>
+  //   )
+  // })
   render() {
+
     if (this.state.loading) {
       return <div>loading...</div>;
     }
 
-    if (!this.state.people.length) {
+    if (!this.state.employees.length) {
       return <div>didn't get a person</div>;
     }
 
     return (
       <div>
+
+        {/* <p>{this.props.filterText}</p> */}
         <table className="table table-dark table-stripped">
           <thead className="thead-font">
             <tr>
@@ -38,7 +47,7 @@ class EmployeesDB extends React.Component {
             </tr>
           </thead>
           <tbody className="tbody-font">
-            {this.state.people.map(person => (
+            {this.state.employees.map(person => (
               <tr>
                 <th>{person.name.first}</th>
                 <th scope="row">
