@@ -1,8 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
-import API from "../../utils/API";
-import Datatable from "./Datatable";
 
 class EmployeesDB extends React.Component {
   state = {
@@ -42,7 +39,6 @@ class EmployeesDB extends React.Component {
       </div>
     
     );
-    
   }
 }
 
