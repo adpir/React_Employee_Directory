@@ -1,71 +1,77 @@
-/* eslint-disable no-undef */
-/* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useEffect, useState } from "react";
+import API from "../../utils/API.js";
+import SearchForm from "../SearchForm";
 
+function EmployeesDB() {
+  const [employee, setEmployee] = useState([]);
+  const [Filter, setFilter] = useState([]);
 
-class EmployeesDB extends React.Component {
-  state = {
-    loading: true,
-    employees: []
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  function loadData() {
+    API.fetchEmployees()
+      .then(data => {
+        setEmployee(data);
+        setFilter(data);
+      })
+      .catch(err => console.log(err));
+  }
+  const sortNames = () => {
+    const name = [...Filter]
+    name.sort((a, b) => (
+      a.firstName > b.firstName ? 1 : -1));
+    console.log(name);
+
+    setFilter(name);
+  };
+  const sorts = () => {
+    const sortID = [...Filter]
+    sortID.sort((a, b) => (
+      a.id > b.id ? 1 : -1));
+    console.log(sortID);
+
+    setFilter(sortID);
   };
 
-  async componentDidMount() {
-    const url = ('https://api.randomuser.me/?results=50')
-    const response = await fetch(url);
-    const data = await response.json();
-    this.setState({ employees: data.results, loading: false });
-  }
-  //  const { data } = this.props;
-  // const employeesList = data.map(name => {
-  //   return (
-  //     <li key={name.id} className={name.first}>{name.last}</li>
-  //   )
-  // })
-  render() {
-
-    if (this.state.loading) {
-      return <div>loading...</div>;
-    }
-
-    if (!this.state.employees.length) {
-      return <div>didn't get a person</div>;
-    }
-
-    return (
+  return (
+    <>
       <div>
+        <SearchForm employee={employee}
+          setFilter={setFilter} />
+        <button type="button" className="btn btn-warning" onClick={sortNames}>Sort By Name</button>
+        <button type="button" className="btn btn-danger" onClick={sorts}>Sort By ID</button>
 
-        {/* <p>{this.props.filterText}</p> */}
-        <table className="table table-dark table-stripped">
-          <thead className="thead-font">
-            <tr>
-              <th scope="col">First Name</th>
-              <th scope="col">Last Name</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Email</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Picture</th>
+      </div>
+      <table className="table">
+        <thead>
+          <tr className="table table-info">
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Gender</th>
+            <th>Picture</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Filter.map(person => (
+            <tr key={person.id}>
+              <td>{person.id}</td>
+              <td>{person.firstName}</td>
+              <td>{person.lastName}</td>
+              <td>{person.email}</td>
+              <td>{person.phone}</td>
+              <td>{person.gender}</td>
+              <td><img alt={person.picture} src={person.picture} /></td>
             </tr>
-          </thead>
-          <tbody className="tbody-font">
-            {this.state.employees.map(person => (
-              <tr>
-                <th>{person.name.first}</th>
-                <th scope="row">
-                  {person.name.last}</th>
-                <td>{person.gender}</td>
-                <td>{person.email}</td>
-                <td>{person.phone}</td>
-                {<td><img src={person.picture.medium} /></td>}
-              </tr>
-            ))}
-          </tbody>
-        </table >
-      </div >
-    )
-
-
-
-  }
+          ))}
+        </tbody>
+      </table >
+    </>
+  );
 }
 
 export default EmployeesDB;
