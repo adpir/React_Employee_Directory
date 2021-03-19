@@ -141,4 +141,4 @@ Please make sure to update tests as appropriate.
 
 :octocat: [GitHub](https://github.com/adpir/React_Employee_Directory)<br>
 
-:octocat: [Deployed]https://adpir.github.io/React_Employee_Directory/
+:octocat: [Deployed] (https://adpir.github.io/React_Employee_Directory)
