@@ -1,0 +1,35 @@
+.jumbotron {
+  height: 400px;
+  background-size: 40px;
+  background-position: center;
+  position: relative;
+}
+
+.jumbotron::after {
+  content: "";
+  display: block;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("./employee.jpg");
+}
+
+.jumbotron * {
+  position: relative;
+  z-index: 2;
+}
+
+.jumbotron h1,
+.jumbotron h2 {
+  background-color: rgba(255, 204, 50, 0.826);
+}
+
+.jumbotron h1 {
+  font-size: 60px;
+  text-align: center;
+  padding-top: 140px;
+  margin-top: 0;
+}

@@ -68,8 +68,4 @@ class EmployeesDB extends React.Component {
   }
 }
 
-
-
 export default EmployeesDB;
-
-

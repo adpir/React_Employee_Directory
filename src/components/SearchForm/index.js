@@ -3,9 +3,6 @@ import React, { Component } from "react";
 
 class SearchForm extends Component {
 
-    filterUpdate() {
-        const val = this.myValue.value
-        this.props.filterUpdate(val)
 
     }
     render() {
