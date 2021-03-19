@@ -1,0 +1,21 @@
+.footer {
+  min-height: 70px;
+  background: #ffb31a;
+  position: relative;
+}
+
+.footer span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3px;
+  background: #ffb31a;
+  justify-content: center;
+}
+span {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: fantasy;
+}
